@@ -25,4 +25,4 @@ COPY . .
 EXPOSE 3333
 
 # Start the MCP server
-CMD ["uv", "run", "main.py"]
+CMD [".venv/bin/python", "main.py"]
