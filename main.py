@@ -27,9 +27,9 @@ def get_profile(user_id: int):
 
 
 if __name__ == "__main__":
-    transport = os.getenv("TRANSPORT", "STDIO").upper()
-    host = os.getenv("HOST", "0.0.0.0")
-    port = int(os.getenv("PORT", "8000"))
+    transport = os.getenv("APP_TRANSPORT", "STDIO").upper()
+    host = os.getenv("APP_HOST", "0.0.0.0")
+    port = int(os.getenv("APP_PORT", "8000"))
     
     if transport == "STDIO":
         mcp.run(transport="stdio")
