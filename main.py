@@ -1,6 +1,7 @@
 from fastmcp import FastMCP
 from random import random
 import os
+import time
 
 mcp = FastMCP("Demo 🚀")
 
@@ -8,6 +9,12 @@ mcp = FastMCP("Demo 🚀")
 def random_float() -> float:
     """Return a random float in [0,1)."""
     return random()
+
+@mcp.tool
+def wait(ms: int) -> str:
+    """Wait for the specified time in milliseconds and return a message."""
+    time.sleep(ms / 1000.0)  # Convert milliseconds to seconds
+    return f"waited for {ms}ms"
 
 @mcp.prompt
 def summarize_request(text: str) -> str:
